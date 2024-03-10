@@ -1,8 +1,11 @@
+"use client";
 import Chart from "@/components/chart";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+    const [time, setTime] = useState("W");
     return (
         <main className="flex px-14 flex-col">
             <h1 className="flex gap-1 text-[#334155] text-sm my-4">
@@ -10,7 +13,6 @@ export default function Home() {
                 <Image src="/icon.svg" width={12} height={12} alt="arrow" />
                 <span className="text-black font-medium">Bitcoin</span>
             </h1>
-            <Chart />
 
             {/* Main Section */}
             <section className="flex flex-row gap-5">
@@ -26,11 +28,49 @@ export default function Home() {
                             Rank #1
                         </h1>
                     </div>
-                    <div className="chart">
-                        <Chart />
+                    <div className="chart mt-10">
+                        <div className="flex">
+                            <div className="flex flex-col">
+                                <h1 className="text-3xl">49,999</h1>
+                                <h1 className="text-base">3,11,999</h1>
+                            </div>
+                            <div className="flex"></div>
+                        </div>
+                        <hr className="my-6"></hr>
+                        <div className="flex justify-between mb-2">
+                            <h1 className="font-semibold text-base text-[#0B1426]">
+                                Bitcoin Price Chart (USD)
+                            </h1>
+                            <div className="flex flex-row text-sm font-medium text-[#5D667B] items-center">
+                                <h1 className="bg-white hover:bg-[#e2ecfe] rounded-full px-2">
+                                    1H
+                                </h1>
+                                <h1 className="bg-white hover:bg-[#e2ecfe] rounded-full px-2">
+                                    24H
+                                </h1>
+                                <h1 className="bg-[#e2ecfe] hover:bg-[#e2ecfe] rounded-full px-2">
+                                    7D
+                                </h1>
+                                <h1 className="bg-white hover:bg-[#e2ecfe] rounded-full px-2">
+                                    1M
+                                </h1>
+                                <h1 className="bg-white hover:bg-[#e2ecfe] rounded-full px-2">
+                                    3M
+                                </h1>
+                                <h1 className="bg-white hover:bg-[#e2ecfe] rounded-full px-2">
+                                    6M
+                                </h1>
+                                <h1 className="bg-white hover:bg-[#e2ecfe] rounded-full px-2">
+                                    ALL
+                                </h1>
+                            </div>
+                        </div>
+                        <div className="h-[400px] mt-10 mb-5">
+                            <Chart />
+                        </div>
                     </div>
                 </div>
-                <div className="md:w-4/12 md:flex hidden">
+                <div className="md:w-4/12 h-min md:flex hidden">
                     <div className="bg-[#0052FE] gap-[19px] rounded-2xl px-4 py-8 text-white flex flex-col items-center text-center">
                         <h1 className="font-bold text-2xl leading-10 w-[268px]">
                             Get Started with KoinX for FREE
